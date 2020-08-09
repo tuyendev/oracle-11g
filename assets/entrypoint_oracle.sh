@@ -93,5 +93,6 @@ echo "Checking shared memory..."
 df -h | grep "Mounted on" && df -h | egrep --color "^.*/dev/shm" || echo "Shared memory is not mounted."
 if [ ! -f $pfile ]; then
   create_db;
+  passwd root && passwd oracle
 fi 
 start_db
